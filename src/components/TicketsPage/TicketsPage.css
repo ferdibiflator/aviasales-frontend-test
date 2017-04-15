@@ -1,0 +1,16 @@
+.tickets-page {
+}
+
+.tickets-page__header {
+  text-align : center;
+}
+
+.tickets-page__instruments {
+  display : block;
+  float   : left;
+}
+
+.tickets-page__tickets {
+  display : block;
+  float   : left;
+}

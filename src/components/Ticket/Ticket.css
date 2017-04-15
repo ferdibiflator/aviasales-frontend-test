@@ -1,0 +1,114 @@
+.ticket {
+  width         : 566px;
+  display       : table;
+  border-radius : 5px;
+  background    : white;
+  box-shadow    : 0 1px 4px rgba(91, 137, 164, .25);
+}
+
+.ticket:hover, .ticket:focus {
+  box-shadow : 0 5px 25px rgba(91, 137, 164, .1);
+}
+
+.ticket:not(:first-child) {
+  margin-top : 20px;
+}
+
+.ticket__price-info {
+  display      : table-cell;
+  width        : 200px;
+  padding      : 20px;
+  text-align   : center;
+  border-right : 1px solid #eceff1;
+  box-sizing   : border-box;
+}
+
+.ticket__flight-info {
+  position       : relative;
+  padding        : 20px;
+  display        : table-cell;
+  vertical-align : top;
+}
+
+.ticket-company-logo {
+  width  : 120px;
+  margin : 5px 5px 15px;
+}
+
+.ticket-btn {
+  width            : 160px;
+  background-color : #ff6d00;
+  font-size        : 16px;
+  line-height      : 22px;
+  font-weight      : 500;
+  color            : white;
+  border-radius    : 5px;
+  border           : none;
+  padding          : 6px 20px;
+  white-space      : pre-wrap;
+  cursor           : pointer;
+  box-shadow       : 0 1px 0 0 #d64d08, 0 2px 1px rgba(0, 0, 0, .1);
+}
+
+.ticket-btn:hover, .ticket-btn:focus, .ticket-btn:active {
+  background-color : #ff8123;
+  box-shadow       : 0 1px 0 0 #d64d08, 0 1px 5px rgba(0, 0, 0, .25);
+  outline          : none;
+}
+
+.ticket-flight-image {
+  width : 110px;
+}
+
+.ticket-flight-info {
+  color : #4a4a4a;
+}
+
+.ticket-flight-info--origin {
+  float      : left;
+  text-align : left;
+}
+
+.ticket-flight-info--destination {
+  float      : right;
+  text-align : right;
+}
+
+.ticket-flight-info__time {
+  font-size   : 32px;
+  font-weight : 400;
+}
+
+.ticket-flight-info__city {
+  font-size   : 12px;
+  font-weight : 600;
+  line-height : 18px;
+}
+
+.ticket-flight-info__date {
+  font-size   : 12px;
+  font-weight : 400;
+  color       : #8b9497;
+}
+
+.ticket-transfers {
+  position   : absolute;
+  left       : 50%;
+  transform  : translateX(-50%);
+  text-align : center;
+  margin-top : 10px;
+}
+
+.ticket-transfers__count {
+  color         : #8b9497;
+  font-weight   : 600;
+  font-size     : 10px;
+  line-height   : 10px;
+  min-height    : 10px;
+  margin-bottom : -3px;
+}
+
+.ticket-transfers__image {
+  width  : 110px;
+  height : auto;
+}
