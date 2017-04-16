@@ -2,26 +2,37 @@ import React, {Component} from 'react';
 import Filter from '../Filter/Filter';
 import Ticket from '../Ticket/Ticket';
 import './TicketsPage.css';
-import data from '../../../public/tickets.json';
+import http from '../../utils/http';
 
 class TicketsPage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      filter: {
+      tickets  : [],
+      filter   : {
         transfers: []
-      }
+      },
+      isLoading: true
     };
   }
 
+  componentDidMount() {
+    http.get('/tickets.json', null, response => this.setState({
+      tickets  : response.tickets,
+      isLoading: false
+    }));
+  }
+
   render() {
-    const tickets = data.tickets
+    if(this.state.isLoading) return null;
+
+    const tickets = this.state.tickets
       .filter(ticket => this.state.filter.transfers.indexOf(ticket.stops) > -1)
       .sort(byPriceAsc)
       .map(ticketInfo => <Ticket data={ticketInfo} key={JSON.stringify(ticketInfo)}/>);
 
-    const transfers = data.tickets
+    const transfers = this.state.tickets
       .reduce(collectTransfers, []);
 
     return (
