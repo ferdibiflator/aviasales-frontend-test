@@ -1,0 +1,15 @@
+.filter {
+
+}
+
+.filter-transfers-list {
+
+}
+
+.filter-transfers-list__item {
+  cursor: pointer;
+}
+
+.filter-transfers-list__item--active {
+  color : blue;
+}
