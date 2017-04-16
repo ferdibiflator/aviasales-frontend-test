@@ -1,4 +1,11 @@
 .tickets-page {
+  padding-bottom : 110px;
+}
+
+.tickets-page:after {
+  content : "";
+  display : table;
+  clear   : both;
 }
 
 .tickets-page__header {
@@ -12,5 +19,9 @@
 
 .tickets-page__tickets {
   display : block;
-  float   : left;
+  float   : right;
+}
+
+.tickets-page-logo {
+  padding : 25px;
 }

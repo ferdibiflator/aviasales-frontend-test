@@ -1,15 +1,85 @@
 .filter {
+  background    : white;
+  border-radius : 5px;
+  width         : 232px;
+  padding       : 15px 0;
+  box-sizing    : border-box;
+  color         : #4a4a4a;
+  box-shadow    : 0 1px 4px rgba(91, 137, 164, .25);
+}
 
+.filter__title {
+  font-size   : 12px;
+  font-weight : 600;
+  padding     : 0 15px;
 }
 
 .filter-transfers-list {
-
+  margin  : 0;
+  padding : 10px 0 0;
 }
 
-.filter-transfers-list__item {
-  cursor: pointer;
+.filter-transfers-list-item {
+  cursor          : pointer;
+  height          : 36px;
+  line-height     : 36px;
+  list-style-type : none;
+  padding         : 0;
+  font-size       : 13px;
+  font-weight     : 400;
+  position        : relative;
 }
 
-.filter-transfers-list__item--active {
-  color : blue;
+.filter-transfers-list-item__checkbox-line {
+  display : block;
+  padding : 0 15px;
+}
+
+.filter-transfers-list-item__only-line {
+  display     : none;
+  color       : #3e9ce8;
+  font-size   : 11px;
+  font-weight : 600;
+  position    : absolute;
+  right       : 0;
+  top         : 0;
+  padding     : 0 15px;
+}
+
+.filter-transfers-list-item:hover, .filter-transfers-list-item:focus {
+  background-color : #f1fcff;
+}
+
+.filter-transfers-list-item:hover .filter-transfers-list-item__only-line,
+.filter-transfers-list-item:focus .filter-transfers-list-item__only-line {
+  display : inline-block;
+}
+
+.filter-transfers-list-item .filter-checkbox {
+  vertical-align : text-bottom;
+  margin-right   : 9px;
+}
+
+.filter-checkbox {
+  display       : inline-block;
+  width         : 19px;
+  height        : 19px;
+  border        : 1px solid #d3d5d6;
+  border-radius : 3px;
+  box-sizing    : border-box;
+}
+
+.filter-checkbox__check {
+  display    : none;
+  position   : absolute;
+  padding    : 8px;
+  background : url('/images/check.svg') 50% 50% no-repeat;
+}
+
+.filter-checkbox--active {
+  border-color : #3e9ce8;
+}
+
+.filter-checkbox--active .filter-checkbox__check {
+  display : inline-block;
 }

@@ -27,7 +27,7 @@ class TicketsPage extends Component {
     return (
       <div className="tickets-page">
         <div className="tickets-page__header">
-          <img src="/images/plane.svg"/>
+          <img className="tickets-page-logo" src="/images/plane.svg"/>
         </div>
 
         <div className="tickets-page__instruments">

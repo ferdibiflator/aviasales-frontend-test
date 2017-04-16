@@ -22,11 +22,17 @@ class Filter extends Component {
     const countTransfers  = this.props.transfers
       .sort(byCountAsc)
       .map(count => (
-        <li
-          className={"filter-transfers-list__item" + (isCountActive(count) ? " filter-transfers-list__item--active" : "")}
-          onClick={this.toggleTransfersCount.bind(this, count)}
-          key={count}>
-          {count}
+        <li className="filter-transfers-list-item" key={count}>
+          <span className="filter-transfers-list-item__checkbox-line"
+                onClick={this.toggleTransfersCount.bind(this, count)}>
+            <div className={"filter-checkbox" + (isCountActive(count) ? " filter-checkbox--active" : "")}>
+              <i className="filter-checkbox__check"></i>
+            </div>
+            <span>{count}</span>
+          </span>
+          <span className="filter-transfers-list-item__only-line" onClick={this.checkOnly.bind(this, count)}>
+            ТОЛЬКО
+          </span>
         </li>
       ));
 
@@ -35,8 +41,14 @@ class Filter extends Component {
 
       <div className="filter__transfers">
         <ul className="filter-transfers-list">
-          <li className={"filter-transfers-list__item" + (isAllActive() ? " filter-transfers-list__item--active" : "")}
-              onClick={this.toggleAll.bind(this)}>Все
+          <li className="filter-transfers-list-item">
+            <span className="filter-transfers-list-item__checkbox-line"
+                  onClick={this.toggleAll.bind(this)}>
+              <div className={"filter-checkbox" + (isAllActive() ? " filter-checkbox--active" : "")}>
+                <i className="filter-checkbox__check"></i>
+              </div>
+              <span>Все</span>
+            </span>
           </li>
           {countTransfers}
         </ul>
@@ -78,6 +90,10 @@ class Filter extends Component {
     else newActiveTransfers.push(count);
 
     this.setActiveTransfersCount(newActiveTransfers)
+  }
+
+  checkOnly(count) {
+    this.setActiveTransfersCount([count]);
   }
 
   setActiveTransfersCount(activeTransfers) {
