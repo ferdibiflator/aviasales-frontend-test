@@ -25,3 +25,22 @@
 .tickets-page-logo {
   padding : 25px;
 }
+
+.transition-tickets-enter {
+  transform           : translateX(100vw);
+  transition          : .3s transform ease-out;
+}
+
+.transition-tickets-enter.transition-tickets-enter-active {
+  transform : translateX(0);
+  opacity   : 1;
+}
+
+.transition-tickets-leave {
+  transform           : translateX(0);
+  transition          : .3s transform ease-out;
+}
+
+.transition-tickets-leave.transition-tickets-leave-active {
+  transform : translateX(100vw);
+}

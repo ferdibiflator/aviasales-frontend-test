@@ -28,6 +28,7 @@
   font-size       : 13px;
   font-weight     : 400;
   position        : relative;
+  overflow        : hidden;
 }
 
 .filter-transfers-list-item__checkbox-line {
@@ -36,14 +37,15 @@
 }
 
 .filter-transfers-list-item__only-line {
-  display     : none;
+  display     : inline-block;
   color       : #3e9ce8;
   font-size   : 11px;
   font-weight : 600;
   position    : absolute;
   right       : 0;
-  top         : 0;
+  top         : 100%;
   padding     : 0 15px;
+  transition  : .1s top ease-in;
 }
 
 .filter-transfers-list-item:hover, .filter-transfers-list-item:focus {
@@ -52,7 +54,7 @@
 
 .filter-transfers-list-item:hover .filter-transfers-list-item__only-line,
 .filter-transfers-list-item:focus .filter-transfers-list-item__only-line {
-  display : inline-block;
+  top : 0;
 }
 
 .filter-transfers-list-item .filter-checkbox {
@@ -70,16 +72,19 @@
 }
 
 .filter-checkbox__check {
-  display    : none;
+  display    : inline-block;
   position   : absolute;
   padding    : 8px;
   background : url('/images/check.svg') 50% 50% no-repeat;
+  opacity    : 0;
+  transition : .1s opacity ease-in;
 }
 
 .filter-checkbox--active {
-  border-color : #3e9ce8;
+  border-color     : #3e9ce8;
+  background-color : #f1fcff;
 }
 
 .filter-checkbox--active .filter-checkbox__check {
-  display : inline-block;
+  opacity : 1;
 }

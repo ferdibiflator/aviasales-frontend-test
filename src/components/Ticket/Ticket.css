@@ -8,6 +8,25 @@
 
 .ticket:hover, .ticket:focus {
   box-shadow : 0 5px 25px rgba(91, 137, 164, .1);
+  animation  : earthquake .3s infinite;
+}
+
+@keyframes earthquake {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(4deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-4deg);
+  }
 }
 
 .ticket:not(:first-child) {

@@ -3,6 +3,7 @@ import Filter from '../Filter/Filter';
 import Ticket from '../Ticket/Ticket';
 import './TicketsPage.css';
 import http from '../../utils/http';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 class TicketsPage extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class TicketsPage extends Component {
   }
 
   render() {
-    if(this.state.isLoading) return null;
+    if (this.state.isLoading) return null;
 
     const tickets = this.state.tickets
       .filter(ticket => this.state.filter.transfers.indexOf(ticket.stops) > -1)
@@ -46,7 +47,12 @@ class TicketsPage extends Component {
         </div>
 
         <div className="tickets-page__tickets">
-          {tickets}
+          <CSSTransitionGroup
+            transitionName="transition-tickets"
+            transitionEnterTimeout={300}
+            transitionLeaveTimeout={300}>
+            {tickets}
+          </CSSTransitionGroup>
         </div>
       </div>
     );

@@ -28,7 +28,7 @@ class Filter extends Component {
             <div className={"filter-checkbox" + (isCountActive(count) ? " filter-checkbox--active" : "")}>
               <i className="filter-checkbox__check"></i>
             </div>
-            <span>{count}</span>
+            <span>{getCountText(count)}</span>
           </span>
           <span className="filter-transfers-list-item__only-line" onClick={this.checkOnly.bind(this, count)}>
             ТОЛЬКО
@@ -65,6 +65,20 @@ class Filter extends Component {
 
     function isCountActive(count) {
       return activeTransfers.indexOf(count) > -1;
+    }
+
+    function getCountText(count) {
+      if (count == 0) return 'Без пересадок';
+
+      const lastDigital = +`${count}`.slice(-1);
+
+      if (lastDigital == 1)
+        return `${count} пересадка`;
+
+      if ([2, 3, 4].indexOf(lastDigital) > -1)
+        return `${count} пересадки`;
+
+      return `${count} пересадок`;
     }
   }
 
