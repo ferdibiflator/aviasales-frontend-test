@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Filter.css';
+import PropTypes from 'prop-types';
 
 class Filter extends Component {
   constructor(props) {
@@ -118,5 +119,10 @@ class Filter extends Component {
     this.props.onChange(activeTransfers);
   }
 }
+
+Filter.propTypes = {
+  transfers: PropTypes.array.isRequired,
+  onChange : PropTypes.func
+};
 
 export default Filter;
